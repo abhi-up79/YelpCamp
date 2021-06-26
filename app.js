@@ -49,6 +49,7 @@ const sessionConfig = {
         maxAge: 1000 * 60 * 60 * 24 * 7
     }
 }
+
 app.use(session(sessionConfig))
 app.use(flash());
 
@@ -67,15 +68,11 @@ app.use((req, res, next) => {
     next();
 })
 
-app.get('/fakeuser', async (req, res) => {
-    const user = new User({ email: 'abhi@gmail.com', username: 'abhii'})
-    const newUser = await User.register(user, 'monkey');
-    res.send(newUser);
-})
 
 app.use('/', userRoutes);
 app.use('/campgrounds', campgroundRoutes);
 app.use('/campgrounds/:id/reviews', reviewRoutes);
+
 
 app.get('/', (req, res) => {
     res.render('home');
@@ -85,7 +82,7 @@ app.all('*', (req, res, next) => {
     next(new ExpressError('Page not Found', 404))
 })
 
-app.use((err, req, res) => {
+app.use((err, req, res, next) => {
     const { statusCode = 500 } = err;
     if (!err.message) err.message = 'Oh no, Something went wrong!';
     res.status(statusCode).render('error', { err });
