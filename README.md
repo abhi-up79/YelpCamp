@@ -2,8 +2,8 @@
 
 View the live app at -(https://pure-escarpment-76304.herokuapp.com/campgrounds)
 
-![Image 1](https://raw.githubusercontent.com/abhishekinctrl/yelp-camp/main/screenshots/image1.png)  
-![Image 2](https://raw.githubusercontent.com/abhishekinctrl/yelp-camp/main/screenshots/image2.png)
+![Image 1](https://raw.githubusercontent.com/abhishekinctrl/YelpCamp/main/screenshots/image1.PNG)  
+![Image 2](https://raw.githubusercontent.com/abhishekinctrl/YelpCamp/main/screenshots/image2.PNG)
 
 YelpCamp is a website where users can create and review campgrounds. In order to review or create a campground, you must have an account. This project was part of Colt Steele's web dev course on udemy.
 
